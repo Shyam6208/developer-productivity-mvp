@@ -68,7 +68,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal Server Error", message: err.message });
 });
 
-// Start Server
-app.listen(config.PORT, () => {
-  console.log(`Express Developer Productivity backend listening on port ${config.PORT}`);
-});
+// Start Server if run directly
+if (require.main === module) {
+  app.listen(config.PORT, () => {
+    console.log(`Express Developer Productivity backend listening on port ${config.PORT}`);
+  });
+}
+
+module.exports = app;

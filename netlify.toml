@@ -1,15 +1,25 @@
 [build]
-  # The path to your frontend directory
-  base = "frontend"
-
-  # The command to build the project
+  # Build from the root directory so the root build script runs
   command = "npm run build"
 
-  # The directory that contains the deploy-ready HTML/CSS/JS (relative to base)
-  publish = "dist"
+  # The directory containing the build output for the React frontend
+  publish = "frontend/dist"
 
+  # The directory where Netlify Serverless Functions are located
+  functions = "netlify/functions"
+
+[functions]
+  # Include mock database JSON files inside the serverless function bundle
+  included_files = ["backend/src/data/*.json"]
+
+# Route API requests to the serverless Express function (internal rewrite, 200)
 [[redirects]]
-  # Redirect all routes to index.html for Single Page Application routing (if added later)
+  from = "/api/*"
+  to = "/.netlify/functions/api/api/:splat"
+  status = 200
+
+# Route all other requests to index.html for React SPA client-side routing
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

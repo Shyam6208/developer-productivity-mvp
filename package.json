@@ -1,0 +1,12 @@
+{
+  "name": "devpulse-ai-root",
+  "version": "1.0.0",
+  "description": "Root package to run both frontend and backend for DevPulse AI",
+  "scripts": {
+    "dev": "node dev.js",
+    "start": "node dev.js",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "build": "node build.js"
+  }
+}
