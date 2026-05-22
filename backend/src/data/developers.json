@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dev_01",
+    "name": "Alex Rivera",
+    "role": "Frontend Developer",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex"
+  },
+  {
+    "id": "dev_02",
+    "name": "Jordan Chen",
+    "role": "Backend Engineer",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Jordan"
+  },
+  {
+    "id": "dev_03",
+    "name": "Taylor Kim",
+    "role": "Fullstack Developer",
+    "avatar": "https://api.dicebear.com/7.x/adventurer/svg?seed=Taylor"
+  }
+]
